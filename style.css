@@ -1,0 +1,278 @@
+/* Définition des variables de couleurs pour les deux modes */
+:root {
+    /* Couleurs mode clair */
+    --bg-color-light-1: #ecfe2d;
+    --bg-color-light-2: #6bf51b;
+    --bg-color-light-3: #29e5f2;
+    --frame-bg-color-light-1: #f3e140; /* Légèrement plus clair que bg-color-light-1 */
+    --frame-bg-color-light-2: #3bf338; /* Légèrement plus clair que bg-color-light-2 */
+    --frame-bg-color-light-3: #4b50f7; /* Légèrement plus clair que bg-color-light-3 */
+    --text-color-light: #333; /* Couleur du texte pour le mode clair */
+    --shadow-light-1: rgba(189, 255, 234, 0.5); /* Ombre légère basée sur la couleur de fond */
+    --shadow-light-2: rgba(142, 192, 176, 0.5); /* Ombre foncée basée sur une couleur plus sombre */
+    --button-shadow-light-1: rgba(255, 255, 255, 0.7); /* Ombre claire pour les boutons */
+    --button-shadow-light-2: rgba(180, 180, 180, 0.7); /* Ombre foncée pour les boutons */
+
+    /* Couleurs mode sombre */
+    --bg-color-dark-1: #a0a535;
+    --bg-color-dark-2: #75de38;
+    --bg-color-dark-3: #317a83;
+    --frame-bg-color-dark-1: #ca7308e5; /* Légèrement plus clair que bg-color-dark-1 */
+    --frame-bg-color-dark-2: #c3993e; /* Légèrement plus clair que bg-color-dark-2 */
+    --frame-bg-color-dark-3: #573a03; /* Légèrement plus clair que bg-color-dark-3 */
+    --text-color-dark: #eee; /* Couleur du texte pour le mode sombre */
+    --shadow-dark-1: rgba(100, 100, 100, 0.5); /* Ombre légère pour le mode sombre */
+    --shadow-dark-2: rgba(0, 0, 0, 0.5); /* Ombre foncée pour le mode sombre */
+    --button-shadow-dark-1: rgba(150, 150, 150, 0.7); /* Ombre claire pour les boutons sombres */
+    --button-shadow-dark-2: rgba(50, 50, 50, 0.7); /* Ombre foncée pour les boutons sombres */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Glowing background effect */
+    background: linear-gradient(
+        -45deg,
+        #F2FFB6,
+        #D5FFBD,
+        #BDFFEA,
+        #775a03
+    );
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease infinite;
+    color: var(--text-color-light);
+    /* Police de caractères - substitut pour Apple Font System */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Animation douce lors du changement de mode */
+}
+
+body.dark-mode {
+    /* Glowing background effect */
+    background: linear-gradient(
+        -45deg,
+        #775a03,
+        #b99110,
+        #d7ad2c,
+        #F2FFB6
+    );
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease infinite;
+    color: var(--text-color-dark);
+    /* Police de caractères - substitut pour Apple Font System */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Animation douce lors du changement de mode */
+}
+
+.container {
+    text-align: center;
+}
+
+.welcome-frame {
+    padding: 40px 60px;
+    border-radius: 20px; /* Bords arrondis */
+    /* Dégradé de fond pour le cadre en mode clair */
+    background: linear-gradient(-60deg, var(--frame-bg-color-light-1), var(--frame-bg-color-light-2), var(--frame-bg-color-light-3));
+    background-size: 300% 300%;
+    animation: gradientMove 15s ease infinite;  /* Animation du dégradé en mouvement */
+    transition: background 0.5s ease, box-shadow 0.5s ease; /* Animation douce lors du changement de mode */
+    /* Effet Neumorphisme pour le mode clair */
+    box-shadow: 10px 10px 20px var(--shadow-light-2),
+                -10px -10px 20px var(--shadow-light-1);
+}
+
+body.dark-mode .welcome-frame {
+    background: linear-gradient(-60deg, var(--frame-bg-color-dark-1), var(--frame-bg-color-dark-2), var(--frame-bg-color-dark-3));
+    background-size: 300% 300%;
+    animation: gradientMove 15s ease infinite;  /* Animation du dégradé en mouvement */
+    transition: background 0.5s ease, box-shadow 0.5s ease; /* Animation douce lors du changement de mode */
+    /* Effet Neumorphisme pour le mode sombre */
+    box-shadow: 10px 10px 20px var(--shadow-dark-2),
+                -10px -10px 20px var(--shadow-dark-1);
+    transition: background 0.5s ease, box-shadow 0.5s ease; /* Animation douce lors du changement de mode */
+}
+
+.welcome-frame h1 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: normal;
+}
+
+.mode-toggle {
+    position: absolute; /* Positionnement absolu par rapport au body */
+    top: 20px;
+    right: 20px;
+}
+
+.mode-toggle button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    /* Style Neumorphisme pour le bouton en mode clair */
+    background: linear-gradient(-60deg, var(--frame-bg-color-light-1), var(--frame-bg-color-light-2), var(--frame-bg-color-light-3));
+    background-size: 300% 300%;
+    animation: gradientMove 15s ease infinite;  /* Animation du dégradé en mouvement */
+    transition: background 0.5s ease, box-shadow 0.5s ease; /* Animation douce lors du changement de mode */
+    /* Effet Neumorphisme pour le mode clair */
+    box-shadow: 10px 10px 20px var(--shadow-light-2),
+                -10px -10px 20px var(--shadow-light-1);
+    transition: background 0.5s ease, box-shadow 0.5s ease; /* Animation douce lors du changement de mode */
+}
+
+.mode-toggle button:focus {
+    outline: none; /* Enlève l'outline au focus pour un look plus propre */
+}
+
+.mode-toggle button:active {
+    /* Effet "pressé" pour le bouton en mode clair */
+    box-shadow: inset 3px 3px 5px var(--button-shadow-light-2),
+                inset -3px -3px 5px var(--button-shadow-light-1);
+}
+
+body.dark-mode .mode-toggle button {
+    background: linear-gradient(-60deg, var(--frame-bg-color-dark-1), var(--frame-bg-color-dark-2), var(--frame-bg-color-dark-3));
+    background-size: 300% 300%;
+    animation: gradientMove 15s ease infinite;  /* Animation du dégradé en mouvement */
+    transition: background 0.5s ease, box-shadow 0.5s ease; /* Animation douce lors du changement de mode */
+    /* Effet Neumorphisme pour le mode sombre */
+    box-shadow: 10px 10px 20px var(--shadow-dark-2),
+                -10px -10px 20px var(--shadow-dark-1);
+    transition: background 0.5s ease, box-shadow 0.5s ease; /* Animation douce lors du changement de mode */
+}
+
+body.dark-mode .mode-toggle button:active {
+    /* Effet "pressé" pour le bouton en mode sombre */
+    box-shadow: inset 3px 3px 5px var(--button-shadow-dark-2),
+                inset -3px -3px 5px var(--button-shadow-dark-1);
+}
+
+.floating-circles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.circle {
+    position: absolute;
+    background: rgba(255, 255, 255, 45%);
+    border-radius: 50%;
+}
+
+.c1 {
+    width: 80px;
+    height: 80px;
+    left: 10%;
+    animation: bounce 8s infinite ease-in-out;
+}
+
+.c2 {
+    width: 150px;
+    height: 150px;
+    left: 30%;
+    animation: bounce 12s infinite ease-in-out;
+    animation-delay: -3s;
+}
+
+.c3 {
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    animation: bounce 10s infinite ease-in-out;
+    animation-delay: -5s;
+}
+
+.c4 {
+    width: 120px;
+    height: 120px;
+    left: 70%;
+    animation: bounce 15s infinite ease-in-out;
+    animation-delay: -7s;
+}
+
+.c5 {
+    width: 60px;
+    height: 60px;
+    left: 90%;
+    animation: bounce 9s infinite ease-in-out;
+    animation-delay: -2s;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(calc(100vh - 150px));
+    }
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.food-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.food {
+    position: absolute;
+    font-size: 24px;
+    animation: rain linear infinite;
+    opacity: 0.7;
+}
+
+/* Generate 21 different positions and speeds */
+.food:nth-child(1) { left: 5%; animation-duration: 3s; animation-delay: 0s; }
+.food:nth-child(2) { left: 10%; animation-duration: 4s; animation-delay: -1s; }
+.food:nth-child(3) { left: 15%; animation-duration: 3.5s; animation-delay: -2s; }
+.food:nth-child(4) { left: 20%; animation-duration: 4.5s; animation-delay: -1.5s; }
+.food:nth-child(5) { left: 25%; animation-duration: 3.2s; animation-delay: -2.5s; }
+.food:nth-child(6) { left: 30%; animation-duration: 4.2s; animation-delay: -3s; }
+.food:nth-child(7) { left: 35%; animation-duration: 3.7s; animation-delay: -2s; }
+.food:nth-child(8) { left: 40%; animation-duration: 4.7s; animation-delay: -1s; }
+.food:nth-child(9) { left: 45%; animation-duration: 3.3s; animation-delay: -3.5s; }
+.food:nth-child(10) { left: 50%; animation-duration: 4.3s; animation-delay: -2.5s; }
+.food:nth-child(11) { left: 55%; animation-duration: 3.8s; animation-delay: -1.5s; }
+.food:nth-child(12) { left: 60%; animation-duration: 4.8s; animation-delay: -2.8s; }
+.food:nth-child(13) { left: 65%; animation-duration: 3.4s; animation-delay: -3.3s; }
+.food:nth-child(14) { left: 70%; animation-duration: 4.4s; animation-delay: -1.3s; }
+.food:nth-child(15) { left: 75%; animation-duration: 3.9s; animation-delay: -2.3s; }
+.food:nth-child(16) { left: 80%; animation-duration: 4.9s; animation-delay: -3.8s; }
+.food:nth-child(17) { left: 85%; animation-duration: 3.5s; animation-delay: -1.8s; }
+.food:nth-child(18) { left: 90%; animation-duration: 4.5s; animation-delay: -2.7s; }
+.food:nth-child(19) { left: 95%; animation-duration: 3.6s; animation-delay: -3.2s; }
+.food:nth-child(20) { left: 98%; animation-duration: 4.6s; animation-delay: -1.7s; }
+.food:nth-child(21) { left: 2%; animation-duration: 3.1s; animation-delay: -2.2s; }
+
+@keyframes rain {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
