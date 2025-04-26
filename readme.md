@@ -1,7 +1,7 @@
 # Food's World - Homepage ✨
 
-[![GitHub license](https://img.shields.io/github/license/JohnMoriaty009/foods_selling_world-homepage?style=for-the-badge)](https://github.com/your-username/foods_selling_website-homepage/blob/main/LICENSE)
-[![GitHub forks](https://img.shields.io/github.com/Fork/JohnMoriaty009/foods_selling_world-homepage?style=for-the-badge)](https://github.com/JohnMoriarty009/Spoon-Knife.git)
+[![GitHub license](https://img.shields.io/github/license/JohnMoriaty009/foods_selling_website?style=for-the-badge)](https://github.com/JohnMoriarty009/foods_selling_website/blob/main/LICENSE)
+[![GitHub forks](https://img.shields.io/github.com/Fork/JohnMoriaty009/foods_selling_website-homepage?style=for-the-badge)](https://github.com/JohnMoriarty009/Spoon-Knife.git)
 
 ## Description 📝
 
