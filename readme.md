@@ -1,9 +1,7 @@
 # Food's World - Homepage ✨
 
 [![GitHub license](https://img.shields.io/github/license/your-username/foodsworld-homepage?style=for-the-badge)](https://github.com/your-username/foodsworld-homepage/blob/main/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/your-username/foodsworld-homepage?style=for-the-badge)](https://github.com/your-username/foodsworld-homepage/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/your-username/foodsworld-homepage?style=for-the-badge)](https://github.com/your-username/foodsworld-homepage/network/members)
-[![GitHub issues](https://img.shields.io/github/issues/your-username/foodsworld-homepage?style=for-the-badge)](https://github.com/your-username/foodsworld-homepage/issues)
+[![GitHub forks](https://github.com/JohnMoriarty009/Spoon-Knife.git)](https://github.com/JohnMoriarty009/Spoon-Knife.git)
 
 ## Description 📝
 
