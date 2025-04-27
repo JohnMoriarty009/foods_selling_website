@@ -71,7 +71,7 @@ This project is provided as-is. You are free to use and modify it.
 
 ## Author 👋
 
-* **[JohnMoriarty009]** - [Link to your GitHub Profile]((https://github.com/JohnMoriarty009)
+* **[JohnMoriarty009]** - [Link to your GitHub Profile](https://github.com/JohnMoriarty009)
 
 ## Acknowledgments ✨
 
