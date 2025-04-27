@@ -71,15 +71,15 @@ This project is provided as-is. You are free to use and modify it.
 
 ## Author 👋
 
-* **[JohnMoriarty009]** - [Link to your GitHub Profile](https://github.com/JohnMoriarty009)
+* **[JohnMoriarty009]** - [GitHub Profile](https://github.com/JohnMoriarty009)
 
 ## Acknowledgments ✨
 
 * Thanks to the tutorials and resources that helped me understand neumorphism and CSS gradients.
 
-## AI Integratiion ✨
+## AI Integration ✨
 
-For this project, we've used AI model. We've began in using Gemini 2.5 Flash Experimental, precisely Coding partner of Gem Manager feature : https://g.co/gemini/share/358b2422e348.
+For this project, we've used AI model. We've began in using Gemini 2.5 Flash Experimental, specially Coding partner of Gem Manager feature : [Chat with Gemini - Gem Manager](https://g.co/gemini/share/358b2422e348).
 After that, we gone to Github Copilot v0.24.2025021302 integrated to Visual Studio Code; it's in this place we've enhance the code entirely.
 We always work on and perform it; so, let's code🧑‍💻👩‍💻!
 
